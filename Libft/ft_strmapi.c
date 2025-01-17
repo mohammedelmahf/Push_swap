@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 12:52:34 by maelmahf          #+#    #+#             */
-/*   Updated: 2024/11/07 17:40:45 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:41:09 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 13:54:49 by maelmahf          #+#    #+#             */
-/*   Updated: 2024/11/11 13:51:35 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:41:01 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

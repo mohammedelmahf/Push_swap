@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:32:05 by maelmahf          #+#    #+#             */
-/*   Updated: 2024/11/07 14:29:05 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:38:50 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

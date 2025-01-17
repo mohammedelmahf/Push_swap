@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 09:09:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2024/11/07 17:37:55 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:39:20 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static size_t	digits_len(int n)
 {

@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:47:57 by maelmahf          #+#    #+#             */
-/*   Updated: 2024/11/16 13:50:02 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:42:16 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 static void	ft_print_format(char f, va_list arg, int *count)
 {

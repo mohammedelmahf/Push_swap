@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 09:24:28 by maelmahf          #+#    #+#             */
-/*   Updated: 2024/11/11 13:15:35 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:41:26 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:29:02 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/16 12:23:05 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:41:50 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../includes/get_next_line.h"
 
 char	*get_next_line(int fd)
 {

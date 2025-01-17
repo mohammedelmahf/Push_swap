@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_01.c                                    :+:      :+:    :+:   */
+/*   stack_utils_01.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 14:35:46 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/17 11:48:16 by maelmahf         ###   ########.fr       */
+/*   Created: 2025/01/16 10:24:29 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/01/17 11:42:24 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,8 @@ void	sb(t_stack **b)
 void	ss(t_stack **a, t_stack **b)
 {
 	if (stack_size(*a) >= 2)
-	{
 		swap(&(*a)->value, &(*a)->prev->value);
-	}
 	if (stack_size(*b) >= 2)
-	{
 		swap(&(*b)->value, &(*b)->prev->value);
-	}
 	ft_putstr_fd("ss\n", 1);
 }

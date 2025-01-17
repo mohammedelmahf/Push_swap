@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:26:00 by maelmahf          #+#    #+#             */
-/*   Updated: 2024/11/15 14:49:07 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:42:28 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	ft_putnbr(int n, int *count)
 {

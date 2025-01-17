@@ -6,11 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:16:27 by maelmahf          #+#    #+#             */
-/*   Updated: 2024/11/11 13:17:30 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:40:46 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static int	is_sep(char a, char c)
 {
