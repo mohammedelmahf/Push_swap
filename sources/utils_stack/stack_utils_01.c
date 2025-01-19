@@ -6,35 +6,40 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:24:29 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/17 11:42:24 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/19 16:04:07 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sa(t_stack **a)
+void			initi_stack(t_stack **a, int ac, char **av)
 {
-	if (stack_size(*a) >= 2)
-	{
-		swap(&(*a)->value, &(*a)->prev->value);
-		ft_putstr_fd("sa\n", 1);
-	}
-}
+	int			i;
+	char		**sp;
 
-void	sb(t_stack **b)
-{
-	if (stack_size(*b) >= 2)
+	while(ac >= 0)
 	{
-		swap(&(*b)->value, &(*b)->prev->value);
-		ft_putstr_fd("sb\n", 1);
+		sp = ft_split(av[ac] , ' ');
+		if(sp == NULL)
+		{
+			free(sp);
+			error_message();
+		}
+		i = 0;
+		while(sp[i + 1])
+			i++;
+		while(i >= 0)
+		{
+			if(check_number_if_is_valide(sp[i]) || error_dup(*a , ft_atol(sp[i])))
+			{
+				free(sp);
+				error_message();
+			}
+			push(a , ft_atol(sp[i]));
+			i--;
+		}
+		i = 0;
+		free(sp);
+		ac--;
 	}
-}
-
-void	ss(t_stack **a, t_stack **b)
-{
-	if (stack_size(*a) >= 2)
-		swap(&(*a)->value, &(*a)->prev->value);
-	if (stack_size(*b) >= 2)
-		swap(&(*b)->value, &(*b)->prev->value);
-	ft_putstr_fd("ss\n", 1);
 }
