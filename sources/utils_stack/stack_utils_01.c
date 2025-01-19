@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:24:29 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/19 16:04:07 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/19 20:18:49 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,20 @@ void			initi_stack(t_stack **a, int ac, char **av)
 	{
 		sp = ft_split(av[ac] , ' ');
 		if(sp == NULL)
-		{
-			free(sp);
 			error_message();
-		}
 		i = 0;
-		while(sp[i + 1])
+		while(sp[i])
 			i++;
-		while(i >= 0)
+		while(i > 0)
 		{
-			if(check_number_if_is_valide(sp[i]) || error_dup(*a , ft_atol(sp[i])))
-			{
-				free(sp);
-				error_message();
-			}
-			push(a , ft_atol(sp[i]));
 			i--;
+			if(check_number_if_is_valide(sp[i]) || error_dup(*a , ft_atol(sp[i])))
+				error_message();
+			push(a , ft_atol(sp[i]));
+			
 		}
 		i = 0;
-		free(sp);
+		free_split(sp);
 		ac--;
 	}
 }

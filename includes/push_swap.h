@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:05:08 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/17 11:52:26 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/19 20:16:38 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ long long		ft_atol(const char *s);
 void			push(t_stack **s, int n);
 void			free_stack(t_stack **stack);
 int				pop(t_stack **stack);
+void			free_split(char **sp);
 
 // sources/operations
 void			sa(t_stack **a);

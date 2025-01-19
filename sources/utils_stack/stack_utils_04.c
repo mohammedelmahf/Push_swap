@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   stack_utils_04.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 09:57:16 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/19 17:37:04 by maelmahf         ###   ########.fr       */
+/*   Created: 2025/01/19 16:43:30 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/01/19 17:32:51 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int ac , char **av)
+void free_split(char **sp)
 {
-    t_stack *a;
-//   t_stack *b;
-
-    a = NULL;
-//    b = NULL;
-    if(ac == 1 || (ac == 2 && !av[1][0]))
-        return(0);
-    else
+    int i = 0;
+    while (sp[i] != NULL)
     {
-        initi_stack(&a , ac -2 , av + 1);
+        free(sp[i]);
+        i++;
     }
-    free_stack(&a);
+    free(sp);
 }

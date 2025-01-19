@@ -7,6 +7,7 @@ SRCS 	=	push_swap.c \
 			sources/utils_stack/stack_utils_01.c \
 			sources/utils_stack/stack_utils_02.c \
 			sources/utils_stack/stack_utils_03.c \
+			sources/utils_stack/stack_utils_04.c \
 			sources/operations/operations_01.c \
 			sources/error/error.c \
 			Libft/ft_bzero.c \
