@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 09:09:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/20 14:41:07 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/20 20:16:38 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	free_stack(t_stack **stack)
 
 void	swap(int *a, int *b)
 {
-	int	c;
+	int		c;
 
 	c = *a;
 	*a = *b;
