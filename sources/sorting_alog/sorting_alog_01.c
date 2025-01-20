@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:40:23 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/20 14:51:07 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:29:22 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	start_sort(t_stack **a , t_stack **b)
 {
-   // void(b);
+    //void(b);
     if(stack_size(*a) == 2)
         sa(a);
     else if(stack_size(*a) == 3)
