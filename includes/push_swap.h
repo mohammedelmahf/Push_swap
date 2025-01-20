@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:05:08 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/19 20:16:38 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/20 14:42:13 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,14 @@ void			push(t_stack **s, int n);
 void			free_stack(t_stack **stack);
 int				pop(t_stack **stack);
 void			free_split(char **sp);
-
+int				stack_sorted(t_stack *a , int (*sorted)(int , int));
+int				sorted(int a , int b);
+t_stack			*top_of_stack(t_stack *a);
+t_stack			*bottom_of_stack(t_stack *a);
 // sources/operations
 void			sa(t_stack **a);
 void			sb(t_stack **b);
-void			ss(t_stack **a, t_stack **b);	
+void			ss(t_stack **a, t_stack **b);
+//sources/sorting_algo
+void	start_sort(t_stack **a , t_stack **b);
 #endif

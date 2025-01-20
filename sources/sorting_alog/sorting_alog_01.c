@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils_04.c                                   :+:      :+:    :+:   */
+/*   sorting_alog_01.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/19 16:43:30 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/20 14:40:21 by maelmahf         ###   ########.fr       */
+/*   Created: 2025/01/20 14:40:23 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/01/20 14:51:07 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include"../../includes/push_swap.h"
 
-int     sorted(int a , int b)
+void	start_sort(t_stack **a , t_stack **b)
 {
-    return(a < b);
-}
-
-int     stack_sorted(t_stack *a , int (*sorted)(int , int))
-{
-    t_stack *tmp;
-
-    tmp = a;
-    while(tmp->prev)
+   // void(b);
+    if(stack_size(*a) == 2)
+        sa(a);
+    else if(stack_size(*a) == 3)
+        {}
+    else if(stack_size(*a) == 4)
+        {}
+    else if(stack_size(*a) == 5)
+        {}
+    else if(stack_size(*a) >= 6)
     {
-        if(sorted(tmp->value, tmp->prev->value) == 0)
-            return(0);
-        tmp = tmp->prev;
+        
     }
-    return(1);
+    
 }
-
