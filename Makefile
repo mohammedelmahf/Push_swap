@@ -1,5 +1,5 @@
 NAME 	= push_swap
-BNAME 	= checker
+#BNAME 	= checker
 CC 		= cc
 FLAGS 	= -Wall -Wextra -Werror #-fsanitize=address -g3
 RM 		= rm -f
@@ -54,7 +54,7 @@ SRCS 	=	push_swap.c \
 
 
 OBJS 	= $(SRCS:.c=.o)
-#OBJS 	= $(BSRCS:.c=.o)
+#BOBJS 	= $(BSRCS:.c=.o)
 
 
 .c.o:
