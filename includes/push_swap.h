@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:05:08 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/21 11:35:52 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:40:46 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void			swap(int *a, int *b);
 void			initi_stack(t_stack **a, int ac, char **av);
 int				stack_size(t_stack *s);
 t_stack			*create_node(int n);
-long long		ft_atol(const char *s);
+long long		longlong_atoi(const char *s);
 void			push(t_stack **s, int n);
 void			free_stack(t_stack **stack);
 int				pop(t_stack **stack);

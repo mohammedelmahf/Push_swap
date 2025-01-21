@@ -6,13 +6,13 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 09:09:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/20 20:16:38 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:40:13 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-long long	ft_atol(const char *s)
+long long	longlong_atoi(const char *s)
 {
 	long long	reslt;
 	int			sign;
