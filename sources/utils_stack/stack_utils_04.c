@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 16:43:30 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/20 14:40:21 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:35:40 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,39 @@ int     stack_sorted(t_stack *a , int (*sorted)(int , int))
     }
     return(1);
 }
+
+t_stack     *stack(t_stack *a)
+{
+    t_stack *max;
+
+    max = a;
+    
+    if(!a)
+        return(NULL);
+    while(a)
+    {
+        if(a->value > max->value)
+            max = a;
+        a = a->prev;
+    }
+    return(max);
+}
+
+t_stack     *stack(t_stack *a)
+{
+    t_stack *min;
+
+    min = a;
+    
+    if(!a)
+        return(NULL);
+    while(a)
+    {
+        if(a->value < min->value)
+            min = a;
+        a = a->prev;
+    }
+    return(min);
+}
+
 
