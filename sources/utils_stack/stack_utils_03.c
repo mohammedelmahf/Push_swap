@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 09:09:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/21 11:40:13 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/02 11:33:54 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_stack  	*top_of_stack(t_stack *a)
 	return(a);
 }
 
-t_stack		*bottom_of_stack(t_stack *a)
+t_stack		*bot_of_stack(t_stack *a)
 {
 	t_stack *tmp;
 
