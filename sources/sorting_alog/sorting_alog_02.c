@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:25:02 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 12:25:09 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 13:16:44 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,10 @@ void    sort_three(t_stack **a)
         rra(a);
     else
         sa(a);
+    
+}
+
+void    sort_four(t_stack **a , t_stack **b)
+{
     
 }
