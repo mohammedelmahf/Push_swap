@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:25:02 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/02 12:10:23 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 12:25:09 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@ void    sort_three(t_stack **a)
     int mid = top_of_stack(*a)->prev->value;
     int bot = bot_of_stack(*a)->value;
 
-    if(top > mid && mid > bot)// 3  1  2
+    if(top > mid && mid > bot)
     {
-        rr(a);
+        ra(a);
         sa(a);
     }
-    else if(top > mid && bot > mid && top > bot )//  3  1  2
+    else if(top > mid && bot > mid && top > bot )
         ra(a);
-    else if(top < mid && mid > bot && top < bot )//  1  3  2
+    else if(top < mid && mid > bot && top < bot )
     {
         sa(a);
         ra(a);
     }
-    else if(top < mid && top > bot && mid > bot)// 2  3  1 
+    else if(top < mid && top > bot && mid > bot)
         rra(a);
-    else //  2  1  3
+    else
         sa(a);
     
 }
