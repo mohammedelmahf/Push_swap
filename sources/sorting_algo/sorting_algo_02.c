@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:25:02 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 18:46:29 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:48:50 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,15 @@ void    sort_four(t_stack **a , t_stack **b)
 	}
 }
 
+void	sort_five(t_stack **a, t_stack **b)
+{
+	min_to_stack_b(a, b);
+	min_to_stack_b(a, b);
+	sort_three(a);
+	pa(a, b);
+	pa(a, b);
+}
+
 void	min_to_stack_b(t_stack **a, t_stack **b)
 {
 	while (stack_min(*a) != top_of_stack(*a))
@@ -96,29 +105,3 @@ void	min_to_stack_b(t_stack **a, t_stack **b)
 // 	}
 // }
 
-void	sort_five(t_stack **a, t_stack **b)
-{
-	min_to_stack_b(a, b);
-	min_to_stack_b(a, b);
-	sort_three(a);
-	pa(a, b);
-	pa(a, b);
-}
-
-int	get_range(t_stack *a)
-{
-	int size ;
-	int range;
-
-	size = stack_size(a);
-	range = 0;
-
-	if(size >= 6 && size <= 16)
-		range = 3;
-	else if(size <= 100)
-		range = 13;
-	else if(size <= 500)
-		range = 35;
-	else
-		range = 45;
-}

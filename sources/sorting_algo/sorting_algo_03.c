@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:39:45 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 18:28:12 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:47:56 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,22 @@ void    insertion_sort(int *arr, int size)
         else
             i++;
     }
+}
+
+int	get_range(t_stack *a)
+{
+	int size ;
+	int range;
+
+	size = stack_size(a);
+	range = 0;
+
+	if(size >= 6 && size <= 16)
+		range = 3;
+	else if(size <= 100)
+		range = 13;
+	else if(size <= 500)
+		range = 35;
+	else
+		range = 45;
 }
