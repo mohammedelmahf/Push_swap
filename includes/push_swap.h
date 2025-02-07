@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:05:08 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 13:16:54 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:47:40 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,7 @@ void			pa(t_stack **a , t_stack**b);
 void			start_sort(t_stack **a , t_stack **b);
 void			sort_three(t_stack **a);
 void			sort_four(t_stack **a , t_stack **b);
+void			sort_five(t_stack **a, t_stack **b);
+void			min_to_stack_b(t_stack **a, t_stack **b);
+
 #endif

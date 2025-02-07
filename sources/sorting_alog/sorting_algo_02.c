@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_alog_02.c                                  :+:      :+:    :+:   */
+/*   sorting_algo_02.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:25:02 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 15:28:03 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:47:10 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,41 @@ void    sort_four(t_stack **a , t_stack **b)
 		sort_three(a);
 		pa(a, b);
 	}
+}
+
+void	min_to_stack_b(t_stack **a, t_stack **b)
+{
+	if (stack_min(*a) == top_of_stack(*a))
+		pb(a, b);
+	else if (stack_min(*a) == top_of_stack(*a)->prev)
+	{
+		sa(a);
+		pb(a, b);
+	}
+	else if (stack_min(*a) == bot_of_stack(*a)->next)
+	{
+		rra(a);
+		rra(a);
+		pb(a, b);
+	}
+	else if (stack_min(*a) == stack_bottom(*a))
+	{
+		rra(a);
+		pb(a, b);
+	}
+	else
+	{
+		ra(a);
+		ra(a);
+		pb(a, b);
+	}
+}
+
+void	sort_five(t_stack **a, t_stack **b)
+{
+	min_to_stack_b(a, b);
+	min_to_stack_b(a, b);
+	sort_three(a);
+	pa(a, b);
+	pa(a, b);
 }
