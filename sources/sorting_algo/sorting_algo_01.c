@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:40:23 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 15:50:06 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:35:18 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,19 @@ void	start_sort(t_stack **a , t_stack **b)
         sort_four(a, b);
     else if(stack_size(*a) == 5)
         sort_five(a, b);
-    // else if(stack_size(*a) >= 6)
-    // {
-        
-    // }
+    else if(stack_size(*a) >= 6)
+    {
+        sort_more(a , b ,get_range(*a) , stack_size(*a));
+        while(*b)
+        {
+            max_to_top(b);
+            pa(a,b);
+        }
+    }
+    
+}
+
+void    sort_more(t_stack **a , t_stack **b ,int range , int size)
+{
     
 }
