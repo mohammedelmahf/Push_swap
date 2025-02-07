@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:25:02 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 13:16:44 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:28:03 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,19 @@ void    sort_three(t_stack **a)
 
 void    sort_four(t_stack **a , t_stack **b)
 {
-    
+	if (stack_min(*a) == bot_of_stack(*a))
+		rra(a);
+	else if (stack_min(*a) == bot_of_stack(*a)->next)
+	{
+		rra(a);
+		rra(a);
+	}
+	else if (stack_min(*a) == top_of_stack(*a)->prev)
+		sa(a);
+	if (!stack_sorted(*a, sorted))
+	{
+		pb(a, b);
+		sort_three(a);
+		pa(a, b);
+	}
 }
