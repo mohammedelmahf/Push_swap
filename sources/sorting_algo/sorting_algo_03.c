@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:39:45 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 16:42:52 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:28:12 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,46 @@ void	max_to_top(t_stack **b)
             rb(b);
         else if (index > size / 2)
             rrb(b);
+    }
+}
+
+int *stack_to_array(t_stack *str)
+{
+    int *arr;
+    int i;
+    t_stack *tmp;
+    int size;
+    
+    i = 0;
+    if(!str)
+        return(NULL);
+
+    tmp = str;
+    size = stack_size(str);
+    arr = malloc(size*sizeof(int));
+    while(tmp)
+    {
+        arr[i] = tmp->value;
+        tmp = tmp->next;
+        i++;
+    }
+    insertion_sort(arr,size);
+    return(arr);
+}
+
+void    insertion_sort(int *arr, int size)
+{
+    int i;
+    i = 0;
+
+    while(size >= i)
+    {
+        if(arr[i] > arr[i + 1])
+        {
+            swap(&arr[i] , &arr[i+1]);
+            i = 0;
+        }
+        else
+            i++;
     }
 }
