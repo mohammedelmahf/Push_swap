@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:05:08 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 11:21:59 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 12:14:03 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ void			ss(t_stack **a, t_stack **b);
 void			rb(t_stack **b);
 void			ra(t_stack **a);
 void			rr(t_stack **a , t_stack **b);
+void			rrr(t_stack **a , t_stack **b);
+void			rra(t_stack **a);
+void			rrb(t_stack **b);
 //sources/sorting_algo
-void	start_sort(t_stack **a , t_stack **b);
-void    sort_three(t_stack **a);
+void			start_sort(t_stack **a , t_stack **b);
+void			sort_three(t_stack **a);
 #endif

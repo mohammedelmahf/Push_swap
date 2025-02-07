@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:39:47 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 11:21:45 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 12:13:44 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,42 @@ void    rr(t_stack **a , t_stack **b)
 {
     ra(a);
     rb(b);
+}
+
+void    rra(t_stack **a)
+{
+    t_stack *bottom;
+    
+    if(stack_size(*a) > 2)
+    {
+        bottom = bot_of_stack(*a);
+        bottom->next->prev = NULL;
+        (*a)->next = bottom;
+        bottom->prev = *a;
+        *a = (*a)->next;
+        (*a)->next = NULL;
+        ft_putstr("rra\n" , 1);
+    }
+}
+
+void    rrb(t_stack **b)
+{
+    t_stack *bottom;
+    
+    if(stack_size(*b) > 2)
+    {
+        bottom = bot_of_stack(*b);
+        bottom->next->prev = NULL;
+        (*b)->next = bottom;
+        bottom->prev = *b;
+        *b = (*b)->next;
+        (*b)->next = NULL;
+        ft_putstr("rrb\n" , 1);
+    }
+}
+
+void    rrr(t_stack **a , t_stack **b)
+{
+    rra(a);
+    rrb(b);
 }
