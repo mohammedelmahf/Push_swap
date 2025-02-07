@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:35:46 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 15:48:39 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:56:33 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	pa(t_stack **a , t_stack**b)
 	if(stack_size(*b))
 	{
 		push(a,pop(b));
-		ft_putstr_fd("pa/n" ,1);
+		ft_putstr_fd("pa\n" ,1);
 	}
 }
 
@@ -57,6 +57,6 @@ void	pb(t_stack **a , t_stack**b)
 	if(stack_size(*a))
 	{
 		push(b , pop(a));
-		ft_putstr_fd("pb/n" ,1);
+		ft_putstr_fd("pb\n" ,1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:39:47 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 15:48:53 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:53:28 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,4 @@ void    rrb(t_stack **b)
         (*b)->next = NULL;
         ft_putstr_fd("rrb\n" , 1);
     }
-}
-
-void    rrr(t_stack **a , t_stack **b)
-{
-    rra(a);
-    rrb(b);
 }

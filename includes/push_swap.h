@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:05:08 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 15:51:21 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 16:13:36 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ t_stack			*top_of_stack(t_stack *a);
 t_stack			*bot_of_stack(t_stack *a);
 t_stack			*stack_max(t_stack *a);
 t_stack			*stack_min(t_stack *a);
+int				is_valid_int(const char *str);
 // sources/operations
 void			sa(t_stack **a);
 void			sb(t_stack **b);
@@ -57,7 +58,7 @@ void			rrr(t_stack **a , t_stack **b);
 void			rra(t_stack **a);
 void			rrb(t_stack **b);
 void			pa(t_stack **a , t_stack**b);
-void			pa(t_stack **a , t_stack**b);
+void			pb(t_stack **a , t_stack**b);
 //sources/sorting_algo
 void			start_sort(t_stack **a , t_stack **b);
 void			sort_three(t_stack **a);
