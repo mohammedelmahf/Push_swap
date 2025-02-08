@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 17:42:34 by aboudiba          #+#    #+#             */
-/*   Updated: 2025/02/08 05:24:33 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 05:27:46 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,32 +33,6 @@ static void	pb_rb(t_stack **a, t_stack **b, int *i)
 	pb(a, b);
 	rb(b);
 	(*i)++;
-}
-
-void	sort_more(t_stack **a, t_stack **b, int range, int size)
-{
-	int	*sarr;
-	int	i;
-
-	sarr = stack_to_array(*a);
-	i = 0;
-	while (*a)
-	{
-		if (range + i >= size)
-			range = size - i - 1;
-		if (top_of_stack(*a)->value <= sarr[i])
-			pb_rb(a, b, &i);
-		else if ((*a)->value > sarr[i] && (*a)->value <= sarr[range + i])
-		{
-			pb(a, b);
-			if (stack_size(*b) >= 2 && (*b)->value < (*b)->prev->value)
-				sb(b);
-			i++;
-		}
-		else
-			ra(a);
-	}
-	free(sarr);
 }
 
 int	max_index(t_stack *b)
@@ -88,5 +62,33 @@ void	max_to_top(t_stack **b)
 			rb(b);
 		else
 			rrb(b);
+	}
+}
+
+void	min_to_b(t_stack **a, t_stack **b)
+{
+	if (stack_min(*a) == top_of_stack(*a))
+		pb(a, b);
+	else if (stack_min(*a) == top_of_stack(*a)->prev)
+	{
+		sa(a);
+		pb(a, b);
+	}
+	else if (stack_min(*a) == bot_of_stack(*a)->next)
+	{
+		rra(a);
+		rra(a);
+		pb(a, b);
+	}
+	else if (stack_min(*a) == bot_of_stack(*a))
+	{
+		rra(a);
+		pb(a, b);
+	}
+	else
+	{
+		ra(a);
+		ra(a);
+		pb(a, b);
 	}
 }
