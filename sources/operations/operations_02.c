@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:39:47 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/08 05:23:41 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 05:33:14 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ void	rb(t_stack **b)
 	}
 }
 
-void    rr(t_stack **a , t_stack **b)
+void	rr(t_stack **a, t_stack **b)
 {
-    ra(a);
-    rb(b);
+	ra(a);
+	rb(b);
 }
 
 void	rra(t_stack **a)

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:51:28 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 16:16:54 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 05:31:27 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,12 @@ int	error_dup(t_stack *a, long long n)
 	return (0);
 }
 
-int is_valid_int(const char *str)
+int	is_valid_int(const char *str)
 {
-    long num = atol(str);
-    if (num < INT_MIN || num > INT_MAX)
-        return (1);
-    return (0);
+	long	num;
+
+	num = atol(str);
+	if (num < INT_MIN || num > INT_MAX)
+		return (1);
+	return (0);
 }

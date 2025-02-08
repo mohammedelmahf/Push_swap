@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 17:42:34 by aboudiba          #+#    #+#             */
-/*   Updated: 2025/02/08 05:27:46 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 05:36:31 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,14 @@ void	max_to_top(t_stack **b)
 	if (!b || !*b)
 		return ;
 	size = stack_size(*b);
-	while ((index = max_index(*b)) != 0)
+	index = max_index(*b);
+	while (index != 0)
 	{
 		if (index <= size / 2)
 			rb(b);
 		else
 			rrb(b);
+		index = max_index(*b);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:24:29 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 16:12:54 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 05:29:01 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,3 @@ void free_split(char **split)
     }
     free(split);
 }
-

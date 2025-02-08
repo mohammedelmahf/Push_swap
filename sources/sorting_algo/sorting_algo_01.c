@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 23:42:54 by aboudiba          #+#    #+#             */
-/*   Updated: 2025/02/08 05:27:40 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 05:34:25 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,32 +34,34 @@ void	start_sort(t_stack **a, t_stack **b)
 	}
 }
 
-void    sort_three(t_stack **a)
+void	sort_three(t_stack **a)
 {
-    int top = top_of_stack(*a)->value;
-    int mid = top_of_stack(*a)->prev->value;
-    int bot = bot_of_stack(*a)->value;
+	int	top;
+	int	mid;
+	int	bot;
 
-    if(top > mid && mid > bot)
-    {
-        ra(a);
-        sa(a);
-    }
-    else if(top > mid && bot > mid && top > bot )
-        ra(a);
-    else if(top < mid && mid > bot && top < bot )
-    {
-        sa(a);
-        ra(a);
-    }
-    else if(top < mid && top > bot && mid > bot)
-        rra(a);
-    else
-        sa(a);
-    
+	top = top_of_stack(*a)->value;
+	mid = top_of_stack(*a)->prev->value;
+	bot = bot_of_stack(*a)->value;
+	if (top > mid && mid > bot)
+	{
+		ra(a);
+		sa(a);
+	}
+	else if (top > mid && bot > mid && top > bot)
+		ra(a);
+	else if (top < mid && mid > bot && top < bot)
+	{
+		sa(a);
+		ra(a);
+	}
+	else if (top < mid && top > bot && mid > bot)
+		rra(a);
+	else
+		sa(a);
 }
 
-void    sort_four(t_stack **a , t_stack **b)
+void	sort_four(t_stack **a, t_stack **b)
 {
 	if (stack_min(*a) == bot_of_stack(*a))
 		rra(a);

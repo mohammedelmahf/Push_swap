@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_algo_01.c                                   :+:      :+:    :+:   */
+/*   sorting_algo_03.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 05:10:48 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/08 05:10:49 by maelmahf         ###   ########.fr       */
+/*   Created: 2025/02/08 05:36:00 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/02/08 05:36:03 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../../includes/push_swap.h"
 
@@ -43,6 +42,8 @@ int	*stack_to_array(t_stack *s)
 	tmp = s;
 	size = stack_size(s);
 	arr = malloc(size * sizeof(int));
+	if (!arr)
+		return (NULL);
 	while (tmp)
 	{
 		arr[i] = tmp->value;

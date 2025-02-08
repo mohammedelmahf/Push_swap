@@ -6,14 +6,14 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:20:53 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 12:21:18 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 05:33:25 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void    rrr(t_stack **a , t_stack **b)
+void	rrr(t_stack **a, t_stack **b)
 {
-    rra(a);
-    rrb(b);
+	rra(a);
+	rrb(b);
 }
