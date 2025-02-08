@@ -6,48 +6,44 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:39:47 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 15:53:28 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 05:23:41 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void    ra(t_stack **a)
+void	ra(t_stack **a)
 {
-    t_stack *bottom;
-    t_stack *new_node;
-    int data;
-    
-    if(stack_size(*a) > 2)
-    {
-        data = pop(a);
-        new_node = create_node(data);
-        bottom = bot_of_stack(*a);
-        
-        new_node->next = bottom;
-        bottom->prev = new_node;
+	t_stack	*tmp;
+	t_stack	*to_bottom;
+	int		data;
 
-        ft_putstr_fd("ra\n", 1); 
-    }
+	if (stack_size(*a) >= 2)
+	{
+		data = pop(a);
+		to_bottom = create_node(data);
+		tmp = bot_of_stack(*a);
+		to_bottom->next = tmp;
+		tmp->prev = to_bottom;
+		ft_putstr_fd("ra\n", 1);
+	}
 }
 
-void    rb(t_stack **b)
+void	rb(t_stack **b)
 {
-    t_stack *bottom;
-    t_stack *new_node;
-    int data;
-    
-    if(stack_size(*b) > 2)
-    {
-        data = pop(b);
-        new_node = create_node(data);
-        bottom = bot_of_stack(*b);
-        
-        new_node->next = bottom;
-        bottom->prev = new_node;
+	t_stack	*tmp;
+	t_stack	*to_bottom;
+	int		data;
 
-        ft_putstr_fd("rb\n", 1); 
-    }
+	if (stack_size(*b) >= 2)
+	{
+		data = pop(b);
+		to_bottom = create_node(data);
+		tmp = bot_of_stack(*b);
+		to_bottom->next = tmp;
+		tmp->prev = to_bottom;
+		ft_putstr_fd("rb\n", 1);
+	}
 }
 
 void    rr(t_stack **a , t_stack **b)
@@ -56,34 +52,34 @@ void    rr(t_stack **a , t_stack **b)
     rb(b);
 }
 
-void    rra(t_stack **a)
+void	rra(t_stack **a)
 {
-    t_stack *bottom;
-    
-    if(stack_size(*a) > 2)
-    {
-        bottom = bot_of_stack(*a);
-        bottom->next->prev = NULL;
-        (*a)->next = bottom;
-        bottom->prev = *a;
-        *a = (*a)->next;
-        (*a)->next = NULL;
-        ft_putstr_fd("rra\n" , 1);
-    }
+	t_stack	*bottom;
+
+	if (stack_size(*a) >= 2)
+	{
+		bottom = bot_of_stack(*a);
+		bottom->next->prev = NULL;
+		(*a)->next = bottom;
+		bottom->prev = *a;
+		*a = (*a)->next;
+		(*a)->next = NULL;
+		ft_putstr_fd("rra\n", 1);
+	}
 }
 
-void    rrb(t_stack **b)
+void	rrb(t_stack **b)
 {
-    t_stack *bottom;
-    
-    if(stack_size(*b) > 2)
-    {
-        bottom = bot_of_stack(*b);
-        bottom->next->prev = NULL;
-        (*b)->next = bottom;
-        bottom->prev = *b;
-        *b = (*b)->next;
-        (*b)->next = NULL;
-        ft_putstr_fd("rrb\n" , 1);
-    }
+	t_stack	*bottom;
+
+	if (stack_size(*b) >= 2)
+	{
+		bottom = bot_of_stack(*b);
+		bottom->next->prev = NULL;
+		(*b)->next = bottom;
+		bottom->prev = *b;
+		*b = (*b)->next;
+		(*b)->next = NULL;
+		ft_putstr_fd("rrb\n", 1);
+	}
 }
