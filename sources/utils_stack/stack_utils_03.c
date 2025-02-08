@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 09:09:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 16:07:29 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 05:39:58 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,29 +51,28 @@ void	free_stack(t_stack **stack)
 
 void	swap(int *a, int *b)
 {
-	int		c;
+	int	c;
 
 	c = *a;
 	*a = *b;
 	*b = c;
 }
 
-t_stack  	*top_of_stack(t_stack *a)
+t_stack	*top_of_stack(t_stack *a)
 {
-	if(!a)
-		return(NULL);
-	return(a);
+	if (!a)
+		return (NULL);
+	return (a);
 }
 
-t_stack		*bot_of_stack(t_stack *a)
+t_stack	*bot_of_stack(t_stack *a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
-	if(!a)
-		return(NULL);
+	if (!a)
+		return (NULL);
 	tmp = a;
-	while(tmp->prev)
+	while (tmp->prev)
 		tmp = tmp->prev;
-	return(tmp);
+	return (tmp);
 }
-
