@@ -28,7 +28,7 @@ int	get_range(t_stack *a)
 	return (range);
 }
 
-static void	pb_rb(t_stack **a, t_stack **b, int *i)
+void	pb_rb(t_stack **a, t_stack **b, int *i)
 {
 	pb(a, b);
 	rb(b);

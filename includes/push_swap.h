@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:05:08 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/08 05:40:59 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 18:50:59 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ long long		longlong_atoi(const char *s);
 void			push(t_stack **s, int n);
 void			free_stack(t_stack **stack);
 int				pop(t_stack **stack);
-void			free_split(char **sp);
+void			*free_split(char **sp);
 int				stack_sorted(t_stack *a, int (*sorted)(int, int));
 int				sorted(int a, int b);
 t_stack			*top_of_stack(t_stack *a);
@@ -73,5 +73,7 @@ void			insertion_sort(int *arr, int size);
 int				*stack_to_array(t_stack *str);
 int				get_range(t_stack *a);
 void			sort_more(t_stack **a, t_stack **b, int range, int size);
+void			min_to_b(t_stack **a, t_stack **b);
+void			pb_rb(t_stack **a, t_stack **b, int *i);
 
 #endif
