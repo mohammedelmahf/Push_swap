@@ -6,64 +6,12 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:25:02 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 18:48:50 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 04:29:12 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void    sort_three(t_stack **a)
-{
-    int top = top_of_stack(*a)->value;
-    int mid = top_of_stack(*a)->prev->value;
-    int bot = bot_of_stack(*a)->value;
-
-    if(top > mid && mid > bot)
-    {
-        ra(a);
-        sa(a);
-    }
-    else if(top > mid && bot > mid && top > bot )
-        ra(a);
-    else if(top < mid && mid > bot && top < bot )
-    {
-        sa(a);
-        ra(a);
-    }
-    else if(top < mid && top > bot && mid > bot)
-        rra(a);
-    else
-        sa(a);
-    
-}
-
-void    sort_four(t_stack **a , t_stack **b)
-{
-	if (stack_min(*a) == bot_of_stack(*a))
-		rra(a);
-	else if (stack_min(*a) == bot_of_stack(*a)->next)
-	{
-		rra(a);
-		rra(a);
-	}
-	else if (stack_min(*a) == top_of_stack(*a)->prev)
-		sa(a);
-	if (!stack_sorted(*a, sorted))
-	{
-		pb(a, b);
-		sort_three(a);
-		pa(a, b);
-	}
-}
-
-void	sort_five(t_stack **a, t_stack **b)
-{
-	min_to_stack_b(a, b);
-	min_to_stack_b(a, b);
-	sort_three(a);
-	pa(a, b);
-	pa(a, b);
-}
 
 void	min_to_stack_b(t_stack **a, t_stack **b)
 {
@@ -77,31 +25,49 @@ void	min_to_stack_b(t_stack **a, t_stack **b)
 	pb(a, b);
 }
 
-// void	min_to_stack_b(t_stack **a, t_stack **b)
-// {
-// 	if (stack_min(*a) == top_of_stack(*a))
-// 		pb(a, b);
-// 	else if (stack_min(*a) == top_of_stack(*a)->prev)
-// 	{
-// 		sa(a);
-// 		pb(a, b);
-// 	}
-// 	else if (stack_min(*a) == bot_of_stack(*a)->next)
-// 	{
-// 		rra(a);
-// 		rra(a);
-// 		pb(a, b);
-// 	}
-// 	else if (stack_min(*a) == bot_of_stack(*a))
-// 	{
-// 		rra(a);
-// 		pb(a, b);
-// 	}
-// 	else
-// 	{
-// 		ra(a);
-// 		ra(a);
-// 		pb(a, b);
-// 	}
-// }
+void	insertion_sort(int *arr, int size)
+{
+	int	i;
 
+	i = 0;
+	while (i + 1 < size)
+	{
+		if (arr[i] > arr[i + 1])
+		{
+			swap(&arr[i], &arr[i + 1]);
+			i = 0;
+		}
+		else
+			i++;
+	}
+}
+
+int	*stack_to_sarray(t_stack *s)
+{
+	int		*arr;
+	t_stack	*tmp;
+	int		i;
+	int		size;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	tmp = s;
+	size = stack_size(s);
+	arr = malloc(size * sizeof(int));
+	while (tmp)
+	{
+		arr[i] = tmp->value;
+		i++;
+		tmp = tmp->prev;
+	}
+	insertion_sort(arr, size);
+	return (arr);
+}
+
+void	pb_rb(t_stack **a, t_stack **b, int *i)
+{
+	pb(a, b);
+	rb(b);
+	(*i)++;
+}

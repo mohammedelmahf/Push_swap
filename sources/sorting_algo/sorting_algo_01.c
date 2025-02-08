@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 14:40:23 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 18:53:00 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/08 04:28:47 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,29 @@ void	sort_five(t_stack **a, t_stack **b)
 	pa(a, b);
 }
 
-void    sort_more(t_stack **a , t_stack **b ,int range , int size)
+void	sort_more(t_stack **a, t_stack **b, int range, int size)
 {
-    int *arr;
-    int i ;
+	int	*sarr;
+	int	i;
 
-    arr = stack_to_array(*a);
-    i = 0;
-    while(*a)
-    {
-        
-    }
-    free(arr);
+	sarr = stack_to_sarray(*a);
+	i = 0;
+	while (*a)
+	{
+		if (range + i >= size)
+			range = size - i - 1;
+		if (top_of_stack(*a)->value <= sarr[i])
+			pb_rb(a, b, &i);
+		else if ((*a)->value > sarr[i] && (*a)->value <= sarr[range + i])
+		{
+			pb(a, b);
+			if (stack_size(*b) >= 2 && (*b)->value < (*b)->prev->value)
+				sb(b);
+			i++;
+		}
+		else
+			ra(a);
+	}
+	free(sarr);
 }
+

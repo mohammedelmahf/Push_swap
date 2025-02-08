@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:05:08 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/07 18:47:16 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/07 19:21:49 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,28 @@ void			max_to_top(t_stack **b);
 void			insertion_sort(int *arr, int size);
 int				*stack_to_array(t_stack *str);
 int				get_range(t_stack *a);
+void    sort_more(t_stack **a , t_stack **b ,int range , int size);
+void	pb_rb(t_stack **a, t_stack **b, int *i);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void    print_stack_a(t_stack *a);
+
 #endif

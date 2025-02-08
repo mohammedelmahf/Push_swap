@@ -13,6 +13,7 @@ SRCS 	=	push_swap.c \
 			sources/operations/operations_03.c \
 			sources/sorting_algo/sorting_algo_01.c \
 			sources/sorting_algo/sorting_algo_02.c \
+			sources/sorting_algo/sorting_algo_03.c \
 			sources/error/error.c \
 			Libft/ft_bzero.c \
 			Libft/ft_calloc.c \
