@@ -1,43 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboudiba <aboudiba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 19:53:46 by aboudiba          #+#    #+#             */
-/*   Updated: 2023/12/20 01:38:52 by aboudiba         ###   ########.fr       */
+/*   Created: 2025/02/14 18:22:27 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/02/14 18:38:43 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "../../includes/push_swap_bonus.h"
 
 void	apply_operations(t_stack **a, t_stack **b, char *line)
 {
 	if (ft_strncmp(line, "sa\n", ft_strlen(line)) == 0)
-		_sa(a);
+		sa_(a);
 	else if (ft_strncmp(line, "sb\n", ft_strlen(line)) == 0)
-		_sb(b);
+		sb_(b);
 	else if (ft_strncmp(line, "ss\n", ft_strlen(line)) == 0)
-		_ss(a, b);
+		ss_(a, b);
 	else if (ft_strncmp(line, "pa\n", ft_strlen(line)) == 0)
-		_pa(a, b);
+		pa_(a, b);
 	else if (ft_strncmp(line, "pb\n", ft_strlen(line)) == 0)
-		_pb(a, b);
+		pb_(a, b);
 	else if (ft_strncmp(line, "ra\n", ft_strlen(line)) == 0)
-		_ra(a);
+		ra_(a);
 	else if (ft_strncmp(line, "rb\n", ft_strlen(line)) == 0)
-		_rb(b);
+		rb_(b);
 	else if (ft_strncmp(line, "rr\n", ft_strlen(line)) == 0)
-		_rr(a, b);
+		rr_(a, b);
 	else if (ft_strncmp(line, "rra\n", ft_strlen(line)) == 0)
-		_rra(a);
+		rra_(a);
 	else if (ft_strncmp(line, "rrb\n", ft_strlen(line)) == 0)
-		_rrb(b);
+		rrb_(b);
 	else if (ft_strncmp(line, "rrr\n", ft_strlen(line)) == 0)
-		_rrr(a, b);
+		rrr_(a, b);
 	else
-		error_generator();
+		error_message();
 }
 
 void	start_cheking(t_stack **a, t_stack **b)
@@ -63,7 +65,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	else
-		initialize_stack(&a, ac - 2, av + 1);
+		initi_stack(&a, ac - 2, av + 1);
 	if (stack_sorted(a, sorted) == 0)
 	{
 		start_cheking(&a, &b);

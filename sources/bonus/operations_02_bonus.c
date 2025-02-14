@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_1.c                                     :+:      :+:    :+:   */
+/*   operations_1_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboudiba <aboudiba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 20:45:53 by aboudiba          #+#    #+#             */
-/*   Updated: 2023/12/18 20:46:20 by aboudiba         ###   ########.fr       */
+/*   Created: 2025/02/14 18:22:41 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/02/14 18:27:50 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #include "../../includes/push_swap_bonus.h"
 
-void	_ra(t_stack **a)
+void	ra_(t_stack **a)
 {
 	t_stack	*tmp;
 	t_stack	*to_bottom;
@@ -28,7 +30,7 @@ void	_ra(t_stack **a)
 	}
 }
 
-void	_rb(t_stack **b)
+void	rb_(t_stack **b)
 {
 	t_stack	*tmp;
 	t_stack	*to_bottom;
@@ -44,13 +46,13 @@ void	_rb(t_stack **b)
 	}
 }
 
-void	_rr(t_stack **a, t_stack **b)
+void	rr_(t_stack **a, t_stack **b)
 {
-	_ra(a);
-	_rb(b);
+	ra_(a);
+	rb_(b);
 }
 
-void	_rra(t_stack **a)
+void	rra_(t_stack **a)
 {
 	t_stack	*bottom;
 
@@ -65,7 +67,7 @@ void	_rra(t_stack **a)
 	}
 }
 
-void	_rrb(t_stack **b)
+void	rrb_(t_stack **b)
 {
 	t_stack	*bottom;
 

@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_2.c                                     :+:      :+:    :+:   */
+/*   operations_03_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboudiba <aboudiba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/14 00:15:39 by aboudiba          #+#    #+#             */
-/*   Updated: 2023/12/18 20:46:31 by aboudiba         ###   ########.fr       */
+/*   Created: 2025/02/14 18:22:44 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/02/14 18:38:13 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #include "../../includes/push_swap_bonus.h"
 
-void	_rrr(t_stack **a, t_stack **b)
+void	rrr_(t_stack **a, t_stack **b)
 {
-	_rra(a);
-	_rrb(b);
+	rra_(a);
+	rrb_(b);
 }
