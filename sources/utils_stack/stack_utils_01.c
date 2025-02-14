@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:24:29 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/08 18:56:11 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/10 12:35:52 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	initi_stack(t_stack **a, int ac, char **av)
 		{
 			if (check_number_if_is_valide(sp[i]) || error_dup(*a, longlong_atoi(sp[i])) || is_valid_int(sp[i]))
 			{	
+				free_stack(a);
 				free_split(sp);
 				error_message();
 			}
