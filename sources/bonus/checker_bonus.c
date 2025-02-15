@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 18:22:27 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/14 18:38:43 by maelmahf         ###   ########.fr       */
+/*   Created: 2025/02/15 15:10:29 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/02/15 15:11:46 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../../includes/push_swap_bonus.h"
 
@@ -65,7 +63,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	else
-		initi_stack(&a, ac - 2, av + 1);
+		initi_stack(&a, ac - 1, av + 1);
 	if (stack_sorted(a, sorted) == 0)
 	{
 		start_cheking(&a, &b);

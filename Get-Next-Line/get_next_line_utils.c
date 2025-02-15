@@ -5,81 +5,90 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 15:53:43 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/17 10:41:57 by maelmahf         ###   ########.fr       */
+/*   Created: 2025/02/14 19:57:12 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/02/15 15:48:47 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/get_next_line.h"
 
-int	len_to_newline(t_list *list)
+size_t	ft_strlen_gnl(char *s)
 {
-	int	i;
-	int	len;
-
-	len = 0;
-	if (!list)
+	if (!*s || !s)
 		return (0);
-	while (list)
-	{
-		i = 0;
-		while (list->buff[i])
-		{
-			if (list->buff[i] == '\n')
-			{
-				len++;
-				return (len);
-			}
-			i++;
-			len++;
-		}
-		list = list->next;
-	}
-	return (len);
+	return (1 + ft_strlen_gnl(++s));
 }
 
-int	found_line(t_list *list)
+char	*ft_strdup_gnl(char *s)
 {
-	long	i;
+	char	*dup;
+	int		i;
 
-	if (!list)
-		return (0);
-	while (list)
-	{
-		i = 0;
-		while (list->buff[i] && i < BUFFER_SIZE)
-		{
-			if (list->buff[i] == '\n')
-			{
-				return (1);
-			}
-			i++;
-		}
-		list = list->next;
-	}
-	return (0);
-}
-
-void	trim_word(char *dst, const char *src, size_t index)
-{
-	size_t	i;
-	size_t	len;
-	size_t	size;
-
-	len = 0;
-	while (dst[len])
-		len++;
-	size = len - index;
+	dup = malloc((ft_strlen_gnl(s) + 1) * sizeof(char));
+	if (!dup)
+		return (NULL);
 	i = 0;
-	while (i < size)
+	while (s[i])
 	{
-		dst[i] = src[i];
+		dup[i] = s[i];
 		i++;
 	}
-	dst[i] = '\0';
+	dup[i] = '\0';
+	return (dup);
 }
 
-int	check_node(char *s)
+char	*ft_strjoin_gnl(char *s1, char *s2)
+{
+	int		i;
+	int		j;
+	char	*str;
+
+	str = malloc((ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j])
+	{
+		str[i + j] = s2[j];
+		j++;
+	}
+	free(s1);
+	str[j + i] = '\0';
+	return (str);
+}
+
+char	*ft_substr_gnl(char *s, unsigned int start, size_t len)
+{
+	char	*str;
+	size_t	i;
+	size_t	slen;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	slen = ft_strlen_gnl(s);
+	while (i + start < slen && i < len)
+		i++;
+	str = malloc((i + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	slen = 0;
+	while (i > 0)
+	{
+		str[slen++] = s[start++];
+		i--;
+	}
+	str[slen] = '\0';
+	return (str);
+}
+
+int	ft_strnl_gnl(char *s)
 {
 	int	i;
 
@@ -91,33 +100,4 @@ int	check_node(char *s)
 		i++;
 	}
 	return (0);
-}
-
-void	del_nodes(t_list **lst, size_t i)
-{
-	t_list	*tmp;
-
-	while (*lst)
-	{
-		if (!check_node((*lst)->buff))
-		{
-			free((*lst)->buff);
-			tmp = (*lst)->next;
-			free((*lst));
-			*lst = tmp;
-		}
-		else
-		{
-			i = 0;
-			while ((*lst)->buff[i])
-			{
-				if ((*lst)->buff[i] == '\n')
-				{
-					trim_word((*lst)->buff, ((*lst)->buff) + i + 1, i + 1);
-					return ;
-				}
-				i++;
-			}
-		}
-	}
 }

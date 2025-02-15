@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:05:08 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/08 18:50:59 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:57:52 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void			swap(int *a, int *b);
 void			initi_stack(t_stack **a, int ac, char **av);
 int				stack_size(t_stack *s);
 t_stack			*create_node(int n);
-long long		longlong_atoi(const char *s);
+long long		longlong_atoll(const char *s);
 void			push(t_stack **s, int n);
 void			free_stack(t_stack **stack);
 int				pop(t_stack **stack);
@@ -47,6 +47,11 @@ t_stack			*bot_of_stack(t_stack *a);
 t_stack			*stack_max(t_stack *a);
 t_stack			*stack_min(t_stack *a);
 int				is_valid_int(const char *str);
+void			validate_split(char **sp);
+void			push_split_to_stack(char **sp, t_stack **a);
+int				check_empty_arg(char *arg);
+int				is_overflow(long long res, char digit, int sign);
+long long		return_value_with_check(int sign, int check);
 
 // sources/operations
 void			sa(t_stack **a);

@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:51:28 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/08 19:09:32 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:58:06 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,25 @@ int	is_valid_int(const char *str)
 {
 	long long	num;
 
-	num = longlong_atoi(str);
+	num = longlong_atoll(str);
 	if (num == LLONG_MAX || num == LLONG_MIN)
 		return (1);
 	if (num < INT_MIN || num > INT_MAX)
 		return (1);
 	return (0);
+}
+
+long long	return_value_with_check(int sign, int check)
+{
+	if (check == 0)
+	{
+		if (sign == 1)
+			return (LLONG_MAX);
+		else
+			return (LLONG_MIN);
+	}
+	if (sign == 1)
+		return (LLONG_MAX);
+	else
+		return (LLONG_MIN);
 }
