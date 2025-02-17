@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:37:24 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/01/27 19:58:16 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:09:57 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,16 @@ int	pop(t_stack **stack)
 	popped = tmp->value;
 	free(tmp);
 	return (popped);
+}
+
+t_stack	*bot_of_stack(t_stack *a)
+{
+	t_stack	*tmp;
+
+	if (!a)
+		return (NULL);
+	tmp = a;
+	while (tmp->prev)
+		tmp = tmp->prev;
+	return (tmp);
 }

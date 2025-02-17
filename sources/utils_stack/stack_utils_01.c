@@ -6,13 +6,13 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:24:29 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/15 15:51:13 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:18:29 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	check_empty_arg(char *arg)
+int	validate_argument(char *arg)
 {
 	int	j;
 
@@ -32,17 +32,42 @@ int	check_empty_arg(char *arg)
 	return (0);
 }
 
-void	validate_split(char **sp)
+char	**split_and_validate_argument(char *arg)
 {
+	char	**sp;
+
+	sp = ft_split(arg, ' ');
 	if (!sp || !sp[0])
 	{
 		free_split(sp);
 		ft_printf("Error\n");
 		exit(1);
 	}
+	return (sp);
 }
 
-void	push_split_to_stack(char **sp, t_stack **a)
+void	push_values_and_check(char **sp, t_stack **a, int i)
+{
+	if (!sp[i])
+	{
+		free_stack(a);
+		free_split(sp);
+		ft_printf("Error\n");
+		exit(1);
+	}
+	if (check_number_if_is_valide(sp[i])
+		|| error_dup(*a, longlong_atoi(sp[i]))
+		|| is_valid_int(sp[i]))
+	{
+		free_stack(a);
+		free_split(sp);
+		ft_printf("Error\n");
+		exit(1);
+	}
+	push(a, longlong_atoi(sp[i]));
+}
+
+void	push_values_to_stack(char **sp, t_stack **a)
 {
 	int	i;
 
@@ -51,25 +76,9 @@ void	push_split_to_stack(char **sp, t_stack **a)
 		i++;
 	while (i >= 0)
 	{
-		if (!sp[i] || check_number_if_is_valide(sp[i])
-			|| error_dup(*a, longlong_atoll(sp[i]))
-			|| is_valid_int(sp[i]))
-		{
-			free_stack(a);
-			free_split(sp);
-			ft_printf("Error\n");
-			exit(1);
-		}
-		push(a, longlong_atoll(sp[i]));
+		push_values_and_check(sp, a, i);
 		i--;
 	}
-	free_split(sp);
-}
-
-void	process_split(char **sp, t_stack **a)
-{
-	validate_split(sp);
-	push_split_to_stack(sp, a);
 }
 
 void	initi_stack(t_stack **a, int ac, char **av)
@@ -78,9 +87,10 @@ void	initi_stack(t_stack **a, int ac, char **av)
 
 	while (ac > 0)
 	{
-		check_empty_arg(av[ac - 1]);
-		sp = ft_split(av[ac - 1], ' ');
-		process_split(sp, a);
+		validate_argument(av[ac - 1]);
+		sp = split_and_validate_argument(av[ac - 1]);
+		push_values_to_stack(sp, a);
+		free_split(sp);
 		ac--;
 	}
 }

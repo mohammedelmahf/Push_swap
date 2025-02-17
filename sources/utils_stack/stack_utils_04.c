@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 16:43:30 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/15 15:47:52 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:09:24 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,9 @@ t_stack	*stack_min(t_stack *a)
 	return (min);
 }
 
-void	*free_split(char **sp)
+t_stack	*top_of_stack(t_stack *a)
 {
-	size_t	i;
-
-	i = 0;
-	while (sp[i])
-	{
-		free(sp[i]);
-		i++;
-	}
-	free(sp);
-	return (NULL);
+	if (!a)
+		return (NULL);
+	return (a);
 }
