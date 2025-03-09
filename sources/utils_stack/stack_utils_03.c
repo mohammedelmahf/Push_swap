@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 09:09:13 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/17 16:09:14 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/09 20:36:12 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;	
 
-	if (!*stack)
+	if (!stack || !*stack)
 		return ;
 	while (*stack)
 	{

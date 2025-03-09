@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:10:29 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/09 20:22:46 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/09 20:29:03 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	apply_operations(t_stack **a, t_stack **b, char *line)
 		rrr_(a, b);
 	else
 		{
-			printf("Error\n");
+			ft_printf("Error\n");
 			free(line);
 			free_stack(a);
 			free_stack(b);
