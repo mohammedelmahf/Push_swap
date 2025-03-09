@@ -1,7 +1,7 @@
 NAME    = push_swap
 BNAME   = checker
 CC      = cc
-FLAGS   = -Wall -Wextra -Werror #-fsanitize=address -g3
+FLAGS   = -Wall -Wextra -Werror -g3 #-fsanitize=address -g3
 RM      = rm -f
 
 SRCS    = push_swap.c \
