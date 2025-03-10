@@ -5,92 +5,105 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 19:57:20 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/15 15:48:41 by maelmahf         ###   ########.fr       */
+/*   Created: 2025/03/10 16:04:54 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/03/10 16:05:47 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../includes/get_next_line.h"
 
-char	*get_rest(char *buffer, size_t line_size)
-{
-	char	*rest;
-	size_t	i;
 
-	if (!buffer || !ft_strlen_gnl(buffer))
-	{
-		free(buffer);
-		buffer = NULL;
-		return (NULL);
-	}
-	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
-		i++;
-	rest = ft_substr_gnl(buffer, i + 1, line_size);
-	free(buffer);
-	return (rest);
+
+void	append_to_list(t_data **listt, char *buff)
+{
+	t_data	*new_node;
+	t_data	*last_node;
+
+	last_node = findlastnode(*listt);
+	new_node = malloc(sizeof(t_data));
+	if (!new_node)
+		return ;
+	if (!last_node)
+		*listt = new_node;
+	else
+		last_node->next = new_node;
+	new_node->save = buff;
+	new_node->next = NULL;
 }
 
-char	*get_line(char *buffer)
+void	create_list(t_data **listt, int fd)
 {
-	char	*line;
-	size_t	i;
+	char	*buffer;
+	ssize_t	readbytes;
 
-	if (!buffer || !ft_strlen_gnl(buffer))
+	while (!new_line(*listt))
+	{
+		buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+		if (!buffer)
+			return ;
+		readbytes = read(fd, buffer, BUFFER_SIZE);
+		if (readbytes <= 0)
+		{
+			free(buffer);
+			return ;
+		}
+		buffer[readbytes] = '\0';
+		append_to_list(listt, buffer);
+	}
+}
+
+char	*get_line(t_data **listt)
+{
+	size_t	line_length;
+	char	*line;
+
+	line_length = length_to_newline(*listt);
+	line = malloc(sizeof(char) * (line_length + 1));
+	if (!line)
 		return (NULL);
-	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
-		i++;
-	line = ft_substr_gnl(buffer, 0, i + 1);
+	line[line_length] = '\0';
+	copy_the_line(line, *listt);
 	return (line);
 }
 
-char	*get_read(int fd, char *buffer)
+void	trimlist(t_data **listt)
 {
-	char	*read_buffer;
-	int		read_bytes;
+	t_data	*lastnode;
+	t_data	*newnode;
+	char	*buff;
+	int		i;
+	int		j;
 
-	read_buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!read_buffer)
-		return (NULL);
-	while (1)
-	{
-		read_bytes = read(fd, read_buffer, BUFFER_SIZE);
-		if (read_bytes == -1)
-			return (free(buffer), free(read_buffer), NULL);
-		read_buffer[read_bytes] = '\0';
-		if (read_bytes == 0)
-			break ;
-		if (!buffer)
-			buffer = ft_strdup_gnl("");
-		buffer = ft_strjoin_gnl(buffer, read_buffer);
-		if (ft_strnl_gnl(buffer))
-			break ;
-	}
-	free(read_buffer);
-	return (buffer);
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	newnode = malloc(sizeof(t_data));
+	if (!buff || !newnode)
+		return ;
+	lastnode = findlastnode(*listt);
+	i = 0;
+	j = 0;
+	while (lastnode->save[i] && lastnode->save[i] != '\n')
+		i++;
+	i++;
+	while (lastnode->save[i])
+		buff[j++] = lastnode->save[i++];
+	buff[j] = '\0';
+	newnode->save = buff;
+	newnode->next = NULL;
+	free_malloc(listt, newnode, buff);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
-	char		*line;
+	static t_data	*listt;
+	char			*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > SIZE_MAX || fd > MAX_FD)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = get_read(fd, buffer);
-	if (!buffer)
+	create_list(&listt, fd);
+	if (!listt)
 		return (NULL);
-	line = get_line(buffer);
-	buffer = get_rest(buffer, ft_strlen_gnl(buffer));
+	line = get_line(&listt);
+	trimlist(&listt);
 	return (line);
 }
-
-// int main()
-// {
-//     // int fd = open("text.txt", O_RDONLY);
-//     char *s = get_next_line(-1);
-//     printf("%s", s);
-//     free(s);
-//     return (0);
-// }

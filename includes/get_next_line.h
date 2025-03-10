@@ -5,36 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 19:57:30 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/02/15 15:48:33 by maelmahf         ###   ########.fr       */
+/*   Created: 2025/03/10 15:51:46 by maelmahf          #+#    #+#             */
+/*   Updated: 2025/03/10 16:05:25 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <unistd.h>
-# include <stdint.h>
+# include <fcntl.h>
+# include <unistd.h>
 
-# ifndef MAX_FD
-#  define MAX_FD 1024
-# endif
+typedef struct s_listt
+{
+	long			value;
+	struct s_listt	*next;
+}					t_listt;
+
+typedef struct v_listt
+{
+	char			*save;
+	struct v_listt	*next;
+}					t_data;
+
+t_data	*findlastnode(t_data *listt);
+int	new_line(t_data *listt);
+size_t	length_to_newline(t_data *listt);
+void	copy_the_line(char *line, t_data *listt);
+void	free_malloc(t_data **listt, t_data *newnode, char *buff);
+char	*get_next_line(int fd);
+void	trimlistt(t_data **listt);
+char	*get_line(t_data **listt);
+void	create_listt(t_data **listt, int fd);
+void	append_to_listt(t_data **listt, char *buff);
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 10
 # endif
 
-size_t	ft_strlen_gnl(char *s);
-char	*ft_strdup_gnl(char *s);
-char	*ft_strjoin_gnl(char *s1, char *s2);
-char	*ft_substr_gnl(char *s, unsigned int start, size_t len);
-int		ft_strnl_gnl(char *s);
-char	*get_line(char *buffer);
-char	*get_rest(char *buffer, size_t line_size);
-char	*get_read(int fd, char *buffer);
-char	*get_next_line(int fd);
-
-#endif // !GET_NEXT_LINE_H
+#endif
