@@ -6,14 +6,11 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 16:04:54 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/10 16:05:47 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:08:50 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/get_next_line.h"
-
-
 
 void	append_to_list(t_data **listt, char *buff)
 {

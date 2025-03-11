@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:23:05 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/10 16:05:30 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:10:10 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 void	start_cheking(t_stack **a, t_stack **b);
 void	apply_operations(t_stack **a, t_stack **b, char *line);
+void	print_error(t_stack **a, t_stack **b, char *line);
 void	sa_(t_stack **a);
 void	sb_(t_stack **b);
 void	ss_(t_stack **a, t_stack **b);

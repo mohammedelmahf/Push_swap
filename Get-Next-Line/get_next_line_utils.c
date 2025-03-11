@@ -6,10 +6,9 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 16:04:58 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/10 16:05:42 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:08:58 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/get_next_line.h"
 

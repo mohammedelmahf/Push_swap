@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 10:24:29 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/09 20:53:39 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:09:44 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	validate_argument(char *arg)
 	if (!arg || arg[0] == '\0')
 	{
 		ft_printf("Error\n");
-		return(1);
+		return (1);
 	}
 	j = 0;
 	while (arg[j] == ' ')
@@ -92,11 +92,11 @@ void	initi_stack(t_stack **a, int ac, char **av)
 			ft_printf("Error\n");
 			exit(1);
 		}
-		if(validate_argument(av[ac - 1]))
-			{
-				free_stack(a);
-				exit(1);
-			}
+		if (validate_argument(av[ac - 1]))
+		{
+			free_stack(a);
+			exit(1);
+		}
 		sp = split_and_validate_argument(av[ac - 1]);
 		push_values_to_stack(sp, a);
 		free_split(sp);

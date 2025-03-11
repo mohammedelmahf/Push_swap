@@ -6,7 +6,7 @@
 /*   By: maelmahf <maelmahf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:51:46 by maelmahf          #+#    #+#             */
-/*   Updated: 2025/03/10 16:05:25 by maelmahf         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:09:12 by maelmahf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct v_listt
 }					t_data;
 
 t_data	*findlastnode(t_data *listt);
-int	new_line(t_data *listt);
+int		new_line(t_data *listt);
 size_t	length_to_newline(t_data *listt);
 void	copy_the_line(char *line, t_data *listt);
 void	free_malloc(t_data **listt, t_data *newnode, char *buff);
